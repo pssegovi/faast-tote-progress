@@ -1,0 +1,63 @@
+/* =========================================================
+   FAAST Tote Progress v2.0 - Estilos mínimos
+   Los estilos principales van inline en content.js
+   para máxima compatibilidad con TC57
+   ========================================================= */
+
+/* Animación de shimmer en la barra de progreso */
+@keyframes toteShimmer {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+#tote-progress-bar-fill::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(90deg, 
+    transparent 0%, 
+    rgba(255, 255, 255, 0.15) 50%, 
+    transparent 100%);
+  animation: toteShimmer 2s infinite;
+}
+
+/* Smooth transitions */
+#tote-progress-container,
+#tote-setup-panel,
+#tote-csv-loader {
+  transition: box-shadow 0.4s ease;
+}
+
+/* File input hover */
+#tote-csv-loader label:active {
+  transform: scale(0.97);
+  border-color: #ff9900;
+}
+
+/* Button active states */
+#btn-start-tote:active,
+#btn-finalizar-tote:active,
+#btn-cerrar-resumen:active,
+#btn-reset-tote:active {
+  transform: scale(0.97);
+}
+
+/* Scrollbar for detail tables */
+#tote-fnsku-detail::-webkit-scrollbar,
+#summary-fnsku-detail::-webkit-scrollbar {
+  width: 4px;
+}
+
+#tote-fnsku-detail::-webkit-scrollbar-thumb,
+#summary-fnsku-detail::-webkit-scrollbar-thumb {
+  background: rgba(255, 153, 0, 0.4);
+  border-radius: 4px;
+}
+
+#tote-fnsku-detail::-webkit-scrollbar-track,
+#summary-fnsku-detail::-webkit-scrollbar-track {
+  background: transparent;
+}

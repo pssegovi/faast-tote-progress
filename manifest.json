@@ -1,0 +1,22 @@
+{
+  "manifest_version": 3,
+  "name": "FAAST Tote Progress - MFAC",
+  "version": "2.1",
+  "description": "Barra de progreso para recepción de totes en FAAST Transfer Receive (auto-update desde PC)",
+  "permissions": ["storage"],
+  "content_scripts": [
+    {
+      "matches": [
+        "https://faast.amazon.co.uk/web/inbound/transfer/receive/*",
+        "https://faast.amazon.co.uk/web/inbound/transfer/receive*"
+      ],
+      "js": ["loader.js"],
+      "css": ["styles.css"],
+      "run_at": "document_idle"
+    }
+  ],
+  "icons": {
+    "48": "icon48.png",
+    "128": "icon128.png"
+  }
+}
